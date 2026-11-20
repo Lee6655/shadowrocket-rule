@@ -15,8 +15,9 @@
 3. **主流 AI 与 Apple Intelligence 全覆盖（`🧠 通用 AI`）**
    - 涵盖 Claude / Anthropic、OpenAI (ChatGPT / Sora)、Google Gemini (AI Studio / NotebookLM)、Cursor、Copilot、Perplexity、Grok (x.ai) 以及 Apple Intelligence。
    - `AppleIntelligence.list` 优先级高于常规 `Apple.list`，避免被普通苹果直连规则截胡。
-4. **白名单兜底（`🐟 漏网之鱼`）**
-   - 国内服务与局域网通过 `Lan.list` + `ChinaMax.list` + `GEOIP,CN` 走 `DIRECT`，其余海外未知域名默认走代理，防止登录鉴权或子域名意外直连。
+4. **白名单兜底（`🐟 漏网之鱼` 默认走 `🤖 Claude 专线`）**
+   - 国内服务与局域网通过 `Lan.list` + `ChinaMax.list` + `GEOIP,CN` 走 `DIRECT`。
+   - 高流量常见海外服务（YouTube、Netflix、Google、GitHub、Telegram）走日常/流媒体分组；其余未命中的海外未知域名通过 `FINAL,🐟 漏网之鱼` 默认走 **`🤖 Claude 专线`**（同一固定纯净 IP），彻底杜绝 AI 新增子域名或鉴权域名落入测速/香港节点带来的风控风险。
 
 ## 导入方法
 
